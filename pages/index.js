@@ -1,21 +1,65 @@
 import Head from "next/head";
 import React from "react";
-import { Breadcrumb, Button, Layout, Menu, theme } from "antd";
-import Image from "next/image";
+import { Button, Card, Col, Layout, Row, theme } from "antd";
 import Link from "next/link";
 
 const { Header, Content, Footer } = Layout;
-const menus = [
-  { key: 0, label: "Home" },
-  { key: 1, label: "About" },
-  { key: 2, label: "Services" },
-  { key: 3, label: "Projects" },
+const whatWeDo = [
+  {
+    label: "Mechanical",
+    key: 1,
+    ser1: "✭ Heating, Ventilation & Air Conditioning (HVAC) System",
+    ser2: "✭ All type of Air Conditioning System ( Centralized, Wall-Mounted, Split System, CC, Ducted)",
+    ser3: "✭ Chilled water system, chiller plants, cooling towers, FAU, AHU, FCU",
+    ser4: "✭ Refrigeration and low temperature projects",
+    ser5: "✭ Duct Works & Installation",
+    ser6: "✭ Ventilation Systems",
+    ser7: "✭ Inspection, Surveys & Reports of Existing Installations",
+    ser8: "",
+    ser9: "",
+  },
+  {
+    label: "Electrical, Fire Alarm & Emergency Lighting System",
+    key: 2,
+    ser1: "✭ Electrical Engineering ( Design & Product Selection)",
+    ser2: "✭ Installations of Electrical Panel Systems like MDBs",
+    ser3: "✭ Panels, SMDBs, DBs / Capacitor Banks",
+    ser4: "✭ BMS Installation",
+    ser5: "✭ Busbar System Installation",
+    ser6: "✭ Cable Laying & Termination Works",
+    ser7: "✭ Electrical Containment Systems",
+    ser8: "✭ Low Current System & Low Voltage System",
+    ser9: "✭ Power Distribution",
+  },
+  {
+    label: "Plumbing Services",
+    key: 3,
+    ser1: "✭ Design & Installation of plumbing, drainage and sanitary systems",
+    ser2: "✭ Pump & Tank Installation",
+    ser3: "✭ Complete Piping Works",
+    ser4: "✭ Sanitary wares fixing",
+    ser5: "✭ Sewage Treatment Plants",
+    ser6: "✭ Water Treatment Plants",
+    ser7: "✭ Potable Water Booster Systems",
+    ser8: "✭ Testing and Commissioning",
+    ser9: "",
+  },
+  {
+    label: "Fire Fighting Systems & Services",
+    key: 4,
+    ser1: "✭ Design, Installation and Servicing of Fire fighting systems",
+    ser2: "✭ Automatic sprinklers/Wet Riser/Dry Riser/ Fire Pumps",
+    ser3: "✭ Foam System",
+    ser4: "✭ Fire Alarm & High Sensitivity Smoke Detection(HSSD)",
+    ser5: "✭ Emergency Lighting (Self Contained, Monitored & Central Battery)",
+    ser6: "✭ Fire Water Tanks",
+    ser7: "✭ Testing and Commissioning",
+    ser8: "",
+    ser9: "",
+  },
 ];
 
 const Home = () => {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
   return (
     <>
       <Head>
@@ -51,8 +95,8 @@ const Home = () => {
         </Header>
         <Content>
           <div className="heroSection">
-            <div class="absolute right-[28%] top-0 hidden h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-blue-600 to-sky-400 opacity-20 blur-3xl filter dark:block dark:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
-            <div class="absolute bottom-44 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
+            <div className="absolute right-[28%] top-0 hidden h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-blue-600 to-sky-400 opacity-20 blur-3xl filter dark:block dark:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
+            <div className="absolute bottom-44 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
             <div className="heroContainer">
               <div className="heroTextContainer">
                 <h1>Align Electromechanical Work LLC</h1>
@@ -78,9 +122,47 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="whatWeDo">
-            <div class="absolute bottom-44 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
-            <div class="absolute right-[28%] top-0 hidden h-[150px] w-[200px] rotate-4 rounded-3xl bg-gradient-to-l from-blue-200 to-sky-200 opacity-10 blur-3xl filter dark:block dark:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
+          <div className="whatWeDoSection">
+            <div className="absolute bottom-44 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
+            <div className="absolute right-[28%] top-0 hidden h-[150px] w-[200px] rotate-4 rounded-3xl bg-gradient-to-l from-blue-200 to-sky-200 opacity-10 blur-3xl filter dark:block dark:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
+            <div className="whatWeDo">
+              <h3>What We Do</h3>
+              <p className="coreServices">CORE SERVICES</p>
+              <Row gutter={[16, 16]}>
+                {whatWeDo?.map((item, index) => (
+                  <Col
+                    className="gutter-row"
+                    xs={8}
+                    sm={16}
+                    md={12}
+                    lg={6}
+                    key={index}
+                  >
+                    <Card>
+                      <span>0{item?.key}</span>
+                      <p className="servicesLabel">{item?.label}</p>
+                      <ul className="servicesDescriptions">
+                        <li>{item?.ser1}</li>
+                        <li>{item?.ser2}</li>
+                        <li>{item?.ser3}</li>
+                        <li>{item?.ser4}</li>
+                        <li>{item?.ser5}</li>
+                        <li>{item?.ser6}</li>
+                        <li>{item?.ser7}</li>
+                        <li>{item?.ser8}</li>
+                        <li>{item?.ser9}</li>
+                      </ul>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </div>
+          <div className="projectSection">
+            <div className="absolute right-[58%] top-0 hidden h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-green-600 to-sky-400 opacity-20 blur-3xl filter dark:block dark:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
+            <div className="absolute top-10 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-green-600 to-indigo-800 opacity-30 blur-3xl filter dark:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
+            <h3>What We Do</h3>
+            <p className="coreServices">Projects</p>
           </div>
         </Content>
         <Footer
