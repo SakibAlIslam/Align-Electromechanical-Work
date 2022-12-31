@@ -2,62 +2,11 @@ import Head from "next/head";
 import React from "react";
 import { Button, Card, Col, Layout, Row, theme } from "antd";
 import Link from "next/link";
+import { whatWeDo } from "../helpers/data/whatWeDo";
+import { whyAlignMEP } from "../helpers/data/whyAlign";
+import { RiseOutlined } from "@ant-design/icons";
 
 const { Header, Content, Footer } = Layout;
-const whatWeDo = [
-  {
-    label: "Mechanical",
-    key: 1,
-    ser1: "✭ Heating, Ventilation & Air Conditioning (HVAC) System",
-    ser2: "✭ All type of Air Conditioning System ( Centralized, Wall-Mounted, Split System, CC, Ducted)",
-    ser3: "✭ Chilled water system, chiller plants, cooling towers, FAU, AHU, FCU",
-    ser4: "✭ Refrigeration and low temperature projects",
-    ser5: "✭ Duct Works & Installation",
-    ser6: "✭ Ventilation Systems",
-    ser7: "✭ Inspection, Surveys & Reports of Existing Installations",
-    ser8: "",
-    ser9: "",
-  },
-  {
-    label: "Electrical, Fire Alarm & Emergency Lighting System",
-    key: 2,
-    ser1: "✭ Electrical Engineering ( Design & Product Selection)",
-    ser2: "✭ Installations of Electrical Panel Systems like MDBs",
-    ser3: "✭ Panels, SMDBs, DBs / Capacitor Banks",
-    ser4: "✭ BMS Installation",
-    ser5: "✭ Busbar System Installation",
-    ser6: "✭ Cable Laying & Termination Works",
-    ser7: "✭ Electrical Containment Systems",
-    ser8: "✭ Low Current System & Low Voltage System",
-    ser9: "✭ Power Distribution",
-  },
-  {
-    label: "Plumbing Services",
-    key: 3,
-    ser1: "✭ Design & Installation of plumbing, drainage and sanitary systems",
-    ser2: "✭ Pump & Tank Installation",
-    ser3: "✭ Complete Piping Works",
-    ser4: "✭ Sanitary wares fixing",
-    ser5: "✭ Sewage Treatment Plants",
-    ser6: "✭ Water Treatment Plants",
-    ser7: "✭ Potable Water Booster Systems",
-    ser8: "✭ Testing and Commissioning",
-    ser9: "",
-  },
-  {
-    label: "Fire Fighting Systems & Services",
-    key: 4,
-    ser1: "✭ Design, Installation and Servicing of Fire fighting systems",
-    ser2: "✭ Automatic sprinklers/Wet Riser/Dry Riser/ Fire Pumps",
-    ser3: "✭ Foam System",
-    ser4: "✭ Fire Alarm & High Sensitivity Smoke Detection(HSSD)",
-    ser5: "✭ Emergency Lighting (Self Contained, Monitored & Central Battery)",
-    ser6: "✭ Fire Water Tanks",
-    ser7: "✭ Testing and Commissioning",
-    ser8: "",
-    ser9: "",
-  },
-];
 
 const Home = () => {
   return (
@@ -161,8 +110,50 @@ const Home = () => {
           <div className="projectSection">
             <div className="absolute right-[58%] top-0 hidden h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-green-600 to-sky-400 opacity-20 blur-3xl filter dark:block dark:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
             <div className="absolute top-10 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-green-600 to-indigo-800 opacity-30 blur-3xl filter dark:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
-            <h3>What We Do</h3>
-            <p className="coreServices">Projects</p>
+            <div className="completeProjectsHeader">
+              <h3>What We Do</h3>
+              <p className="completeProjects">Completed Projects</p>
+            </div>
+            <div className="projectLists">
+              <Row gutter={[16, 16]}>
+                <Col className="gutter-row" xs={8} sm={16} md={12} lg={8}>
+                  <img src="https://i.ibb.co/PDny8mr/p1.png" />
+                </Col>
+                <Col className="gutter-row" xs={8} sm={16} md={12} lg={8}>
+                  <img src="https://i.ibb.co/9V5fW7b/p2.png" />
+                </Col>
+                <Col className="gutter-row" xs={8} sm={16} md={12} lg={8}>
+                  <img src="https://i.ibb.co/xfRxDtb/p3.png" />
+                </Col>
+              </Row>
+            </div>
+          </div>
+          <div className="whatWeDoSection">
+            <div className="absolute bottom-44 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
+            <div className="absolute right-[28%] top-0 hidden h-[150px] w-[200px] rotate-4 rounded-3xl bg-gradient-to-l from-blue-200 to-sky-200 opacity-10 blur-3xl filter dark:block dark:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
+            <div className="whatWeDo">
+              <h3>Why Align MEP?</h3>
+              <p className="coreServices">ALIGHN MEP</p>
+              <Row gutter={[16, 16]}>
+                {whyAlignMEP?.map((item, index) => (
+                  <Col
+                    className="gutter-row"
+                    xs={8}
+                    sm={16}
+                    md={12}
+                    lg={6}
+                    key={index}
+                  >
+                    <Card>
+                      <div style={{display: 'flex', alignItems: 'center'}}>
+                        <p className="servicesLabel">{item?.icon}</p>
+                        <p className="servicesDescriptions">{item?.title}</p>
+                      </div>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </div>
           </div>
         </Content>
         <Footer
